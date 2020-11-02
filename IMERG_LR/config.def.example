@@ -1,0 +1,10 @@
+[OverAll]
+#
+#
+username = usrEarthData
+password = psswrdEarthData
+
+# Make sure the last "/" is present !
+output = /directory/for/the/output/files/
+# Make sur temp_dir is empty if not you will lose your file ..
+temp_dir = /Temporary/directory/for/the/downloadad/files/
