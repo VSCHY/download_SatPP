@@ -88,6 +88,7 @@ if __name__ == "__main__":
 3. IMERG: Integrate the links for the Early and Final run
 4. IMERG: Make flexible the limits of the definition of 1 day
 5. IMERG: Allow for half-hourly output instead of daily
+6. Best documentation in README and Wiki
 
 ### Development
 
