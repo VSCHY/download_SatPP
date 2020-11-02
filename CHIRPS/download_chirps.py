@@ -19,6 +19,7 @@ download_dir  = ""
 url = 'https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_dekad/netcdf/'
 # Recut the data over Argentina
 argentina = False
+startindex = 5
 
 ##############
 if download_dir != "":
@@ -31,7 +32,7 @@ if download_dir != "":
     # First link to download in the page
     # Here the index = 5 is valid for the dekad link but it may change if you download another product (ex : daily, dekad, monthly)
     # To be sure you can check the link and check that it is the first year
-    one_a_tag = soup.findAll('a')[5:] 
+    one_a_tag = soup.findAll('a')[startindex:] 
     links = [one_a_tag[i]['href'] for i in range(len(one_a_tag))]
 
     for link in links:

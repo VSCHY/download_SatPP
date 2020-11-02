@@ -1,4 +1,5 @@
 import sys
+sys.path.append("./library")
 import requests 
 from datetime import date, timedelta
 import numpy as np 
@@ -17,6 +18,7 @@ config=configparser.ConfigParser()
 config.read("config.def")
 output=config.get("OverAll", "output")
 temp_dir=config.get("OverAll", "temp_dir")
+numproc=config.getint("OverAll", "numproc", fallback = 1)
 
 ##########################################
 
@@ -42,7 +44,7 @@ class download:
             datet = "{0}{1:02}{2:02}".format(year, month, i)
             filen = output+"3B-HHR-L.MS.MRG.3IMERG."+datet+".nc"
             if __name__ == "__main__":
-                pool = multiprocessing.Pool(processes=4)
+                pool = multiprocessing.Pool(processes=numproc)
             if not os.path.isfile(filen):  
                 L = down.get_HH_urls_day(year, month, i)
                 numfile = 0
@@ -66,11 +68,11 @@ if __name__ == "__main__":
     d = download(output,temp_dir)
     # Define list of years
     # ex : YEAR = [2019]
-    YEAR = []
+    YEAR = [2019]
     # Define list of months
     # ex : MONTH = np.arange(1,12)
-    ONTH = np.arange(1,12)
-    for y in YEAR
+    MONTH = np.arange(1,2)
+    for y in YEAR:
         for m in MONTH:
             d.download_month(y, m)
 
