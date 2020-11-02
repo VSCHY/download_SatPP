@@ -26,7 +26,7 @@ conda activate SPPdownload
 ```
 And when we finish, to deactivate it : 
 ```sh
-conda deactivate SPPdownload
+conda deactivate
 ```
 
 ### How it works ? 
